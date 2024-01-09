@@ -1,4 +1,4 @@
-# Resolve react_native_pods.rb with node to allow for hoisting
+ # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
     "react-native/scripts/react_native_pods.rb",
@@ -14,7 +14,7 @@ prepare_react_native_project!
 # To fix this you can also exclude `react-native-flipper` using a `react-native.config.js`
 # ```js
 # module.exports = {
-#   dependencies: {
+#   dependencies: { 
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
 flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
